@@ -1,0 +1,21 @@
+# Catatan #2
+
+# Operator arithmatic Swift
+# penggunaan + pada String akan melakukan Concatination (sama dengan c#)
+1. +, -, *, /, %	==> Operator biasa
+2. -=, +=, *=, /=  	==> Operator Assignment
+
+
+# Operator perbandingan
+# Di Swift Operator == sama dengan ===. Sehingga kedua operan harus benar2 sama!
+# Begitu juga Operator != sama dengan !==.
+1. >, <, >=, <=, ==, !=		==> Operator Perbandingan biasa.
+2. !						==> Operator Pembalik
+Contoh:
+var testExcla = false
+if !testExcla{
+	print(true)
+}else{
+	print(else)
+}
+// Output : true
