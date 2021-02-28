@@ -1,2 +1,39 @@
 # Catatan #1
 
+# Variable dan Constant
+# namanya baik variable dan konstanta tidak boleh sama.
+Contoh:
+var variableName = "Bachtiar"
+let constantName = "Lubis"
+
+
+
+#Tipe data di swift
+# Lebih prefer Double ketimbang Float, karena masalah tingkat akurasi.
+# 0.000003 akan menjadi 0.00000 di Float, sementara Double tidak.
+# 123456.783333 akan menjadi 123456.8 di Float, smentara Double tdk.
+1. String 	=> var strName: String...
+2. Int		=> var intName: Int...
+3. Double	=> var doubleName: Double...
+4. Float	=> var floatName: Float...
+4. Boolean 	=> var boolName: Bool...
+
+
+# Assignment dengan otomatis mengenali tipe data yang BENAR
+# Ini sering disebut "Type Inference"
+# Preferable / lebih dipilih ketimbang cara Type Anotaion.
+Contoh:
+var varName = "Bachtiar"
+var fractName = 86.783333 ==> Ini akan menjadi Double!
+
+# Assignment dengan otomatis mengenali tipe data yang SALAH
+Contoh:
+var varName
+varName = "Bachtiar"
+--> Error : "Type annotation missing in pattern"
+
+# Assignment dengan deklarasi Tipe Data dengan variable
+# Ini sering disebut "Type Anotation"
+Contoh :
+var varName: String
+varName ="Bachtiar"
