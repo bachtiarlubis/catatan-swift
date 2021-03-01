@@ -1,3 +1,17 @@
 # Catatan #5
 
-# 
+# Dictionary di Swift
+# Dictionary seperti membuat Json dengan kurung [] di php
+Contoh:
+var myDict = [
+	"firstname": "Bachtiar",
+	"lastname": "Lubis"
+]
+
+print(myDict["firstname"] ?? "firstname is null")
+print(myDict["lastname"] ?? "lastname is null")
+
+# Note : untuk dictionary, untuk mencetak nilai dictionary kita harus-
+#	 	 membuatnya dalam operasi ternari dengan menyertakan nilai-
+#		 default. Jika tidak warning berikut akan muncul:
+#		 "Expression implicitly coerced from String? to Any" 
