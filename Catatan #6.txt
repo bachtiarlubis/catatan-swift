@@ -1,0 +1,37 @@
+# Catatan #6
+
+# if else if and else Condition
+# Note : == swift sama dengan === dan != sama dengan !== di php
+Contoh:
+var test1 = true
+var test2 = false
+var test3 = "teletubies"
+
+if test1 {
+	// if this it would be true
+	print(true)
+}else if !test2 {
+	// if this it would be true
+	print(true)
+}else if test3 == "Teletubies"{
+	// if this it would be false
+	print(true)
+}else{
+	// default condition
+	print(false)
+}
+
+
+
+# Identical di Swift (=== atau !===)
+# Identical bertujuan untuk membandingkan Objek Instance
+# Hanya kedua Instansiasi dengna referensi yang sama saja dianggap BENAR
+Contoh
+
+class MyClass {}
+var test1 = MyClass()
+var test2 = MyClass()
+var test3 = test1
+
+print(test1 === test2) // false
+print(test1 === test3) // true
