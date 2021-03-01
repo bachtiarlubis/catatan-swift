@@ -1,0 +1,11 @@
+# Catatan #3
+
+# String interpolation
+# Merupakan teknik untuk menyertakan variable di dalam suatu String text.
+# Dengan String Interpolation dimungkinkan untuk melakukan Ekspresi-
+# di dalamnya.
+Contoh
+var strName = "Bachtiar"
+var intAge = 25
+print("Nama saya adalah \(strName) usia \(intAge), lahir pada tahun \(2020 - intAge)")
+// output: Nama saya adalah Bachtiar

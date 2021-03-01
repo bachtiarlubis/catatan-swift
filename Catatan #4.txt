@@ -1,0 +1,77 @@
+# Catatan #4 
+
+# Array
+# Array di deklarasi dengan cara Type Inference dan Type Annotation.
+# Note: dalam deklarasi Type Inference, array tidak dapat memiliki-
+#       elemen dengan tipe berbeda2
+# Dalam Type Annotation, contoh ke-2 lebih disarankan karena lebih-
+# singkat kodenya.
+Contoh:
+// Type Inference
+var arrayNumb = [1, 2, 3, 4, 5] // Valid
+var arrayStr = ["Bachtiar", "Muhammad", "Lubis"] // Valid
+var arrayAny: [Any] [1, 2, 3, "Bachtiar", "Lubis"] // Valid
+
+// Type Annotation
+// 1
+var arrayAny: [Any] = []
+arrayAny[0] = "xxx"
+arrayAny[1] = 10
+// 2
+var arrayAny = [Any]()
+arrayAny[0] = "xxx"
+arrayAny[1] = 10
+
+
+
+# Cara akses array
+Contoh:
+print(arrayNum[1]) // Output: 2
+arrayNum[2] = 6
+print(arrayNum[2]) // Output: 6
+
+
+
+# var_dump() di swift
+1. dump()
+
+
+# Cara cek tipe data
+Contoh:
+var arrStr = ["ax", "sdsa"]
+type(of: arrStr)
+/*
+	Output : main.swift:2:1: warning: expression of type
+			 '[String].Type' is unused type(of: arrStr)
+*/
+
+
+# Array Operator
+1. Merge Array dengan '+' operator
+Contoh:
+var song1 = ["Shake it off", "You Belong With Me!"]
+var song2 = ["Today was a Fairytale", "Welcome to the jungle"]
+var arrMerge = song1 + song2
+dump(arrMerge)
+/*
+	Output : ▿ 6 elements
+			  - "Shake it Off"
+			  - "You Belong with Me"
+			  - "Love Story"
+			  - "Today was a Fairytale"
+			  - "Welcome to New York"
+			  - "Fifteen"
+*/
+
+2. Merge Array degan Assaignment Operator
+song1 += song2;
+dump(song1)
+/*
+	Output : ▿ 6 elements
+			  - "Shake it Off"
+			  - "You Belong with Me"
+			  - "Love Story"
+			  - "Today was a Fairytale"
+			  - "Welcome to New York"
+			  - "Fifteen"
+*/
