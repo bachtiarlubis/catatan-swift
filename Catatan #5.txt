@@ -1,16 +1,17 @@
 # Catatan #5
 
-# Dictionary
-# Dictionary sama seperti Associative Array di PHP
-# hanya tanda => di PHP, : di Swift.
+# Dictionary di Swift
+# Dictionary seperti membuat Json dengan kurung [] di php
 Contoh:
 var myDict = [
 	"firstname": "Bachtiar",
-	"middlename": "Muhammad",
 	"lastname": "Lubis"
 ]
 
+print(myDict["firstname"] ?? "firstname is null")
+print(myDict["lastname"] ?? "lastname is null")
 
-# Cara akses Dictionary juga seperti Associative Array di PHP
-Contoh:
-print(myDict["firstname"]) // Output: Bachtiar
+# Note : untuk dictionary, untuk mencetak nilai dictionary kita harus-
+#	 	 membuatnya dalam operasi ternari dengan menyertakan nilai-
+#		 default. Jika tidak warning berikut akan muncul:
+#		 "Expression implicitly coerced from String? to Any" 
