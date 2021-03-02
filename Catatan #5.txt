@@ -1,3 +1,16 @@
 # Catatan #5
 
-# 
+# Dictionary
+# Dictionary sama seperti Associative Array di PHP
+# hanya tanda => di PHP, : di Swift.
+Contoh:
+var myDict = [
+	"firstname": "Bachtiar",
+	"middlename": "Muhammad",
+	"lastname": "Lubis"
+]
+
+
+# Cara akses Dictionary juga seperti Associative Array di PHP
+Contoh:
+print(myDict["firstname"]) // Output: Bachtiar
