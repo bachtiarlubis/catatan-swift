@@ -1,0 +1,57 @@
+# Catatan #6
+
+# Conditional Statements (if else)
+# Note == (equal to) di Swift sama dengan === (identical) di PHP.
+# Dan === (identical) di Swift hanya berguna untuk membandingkan-
+# instance dari dua Objek atau lebih.
+I)Contoh Single Condition:
+var action: String
+var person = "hater"
+
+if person == "hater" {
+	action = "hate" // Run
+}else if person == "player"{
+	action = "play"
+}else{
+	action = "pro"
+}
+print(action) // Output: hate
+
+
+II)Contoh Multiple Condition dan Not operator:
+var action: String
+var narutoIsHokage = true
+var sasukeIsNotHokage = true
+
+if narutoIsHokage && sasukeIsNotHokage{
+	action = "That's right"
+}
+print(action) // Output: That's right
+
+if !narutoIsHokage && sasukeIsNotHokage{
+	action = "That's right"
+}else{
+	action = "That's NOT right"
+}
+print(action) // Output: That's NOT right
+
+
+
+III) Contoh identical di Swift
+# Hanya instansi objek yang memiliki referensi yang sama yang diang-
+# gap identical.
+class Naruto {}
+
+var action: String
+var naruto1 = Naruto()
+var naruto2 = Naruto()
+var naruto3 = naruto1
+
+if naruto1 === naruto2 {
+	action = "Naruto 1 === Naruto 2"
+}else if naruto1 === naruto3{
+	action = "Naruto 1 === Naruto 3"
+}else{
+	action = "Nothing is identical"
+}
+print(action) // Output : "Naruto 1 === Naruto 3"
