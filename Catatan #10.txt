@@ -1,0 +1,26 @@
+# Catatan #10
+
+# Switch Case
+# Switch Case di Swift tidak memerlukan break karena sudah otomatis ada.
+#
+# Switch case mendukung Closed Range atau Half Open Range Operator!
+#
+# fallThrough keyword bertujuan untuk skip case true dan akan berhenti-
+# dan mencetak case berikutnya (meskipun case tersebut false)!
+Contoh
+let studioAlbums = 5
+
+switch studioAlbums {
+	case 0 ... 1:
+		print("aaaa")
+	case 2 ... 3:
+		print("bbbb")
+	case 4 ..< 5:
+		print("cccc")
+	case 4 ..< 6:
+		// fallThrought // Akan mencetak zzzz
+		print("dddd")
+	default:
+		print("zzzz")
+}
+// Output : dddd
