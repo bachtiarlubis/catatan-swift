@@ -5,6 +5,7 @@
 # 1 ... 10 ==> Akan loop dari 1 sampai 10 !
 # 1 ..< 10 ==> Akan loop dari 1 sampai 9 !
 # i sebagai penampung nilai dari Closed Range Operator.
+# Terdapat method khusus dalam Loop. break dan continue (sama dengan PHP fungsinya)
 Contoh For Loop dengan Operator Closed Range:
 for i in 1 ... 10 {
 	print("\(i) x 10 is \(i * 10)")
