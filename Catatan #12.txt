@@ -1,0 +1,83 @@
+# Catatan #12
+
+# Optionals
+# Optionals memungkinakan nilai kembalian suatu fungsi tidak harus-
+# memiliki tipe yang sama dengan tipe kemalian fungsi.
+#
+# Fungsi dengan Tipe Optional dilambangkan dengan tanda ?
+# 
+# Pemanggilan fungsi tipe optional dapat dilakukan dengan menggunakan-
+# metode Coalescing Operator atau dengan memanfaatkan variable Type-
+# Annotation dengan Type Optional yang sama dengan Fungsi atau dengan-
+# Type Inference seperti biasa.
+#
+* Contoh dengan Coalescing Operator:
+func getHaterStatus(weather: String) -> String?{
+	if weather == "sunny"{
+		return nil
+	}else{
+		return "Hate"
+	}
+}
+
+print(getHaterStatus(weather: "rainy") ?? "") // Output : Hate
+
+
+* Contoh dengan variable Type Annotation:
+func getHaterStatus(weather: String) -> String?{
+	if weather == "sunny"{
+		return nil
+	}else{
+		return "Hate"
+	}
+}
+
+var status: String?
+status = getHaterStatus(weather: "rainy")
+print(stataus) // Output: Hate
+
+
+* Contoh dengan variable Type Inference
+func getHaterStatus(weather: String) -> String?{
+	if weather == "sunny"{
+		return nil
+	}else{
+		return "Hate"
+	}
+}
+
+var status = getHaterStatus(weather: "rainy") // Output: Hate
+
+
+# Menyertakan Argument dari hasil Fungsi Type Optional ke dalam fungsi dengan Type Absolute (Int, String, Bool, dll)
+# Ini bertujuan untuk memberikan Argument yang valid kepada Fungsi dengan Type Absolute.
+
+Contoh:
+// Fungsi Type Optional
+func getHaterStatus(weather: String) -> String?{
+	if weather == "sunny"{
+		return nil
+	}else{
+		return "Hate"
+	}
+}
+
+// Fungsi Type Absolute
+func takeHaterAction(status: String){
+	if status == "Hate"{
+		print("Hating")
+	}
+}
+
+if let haterStatus = getHaterStatus(weather: "rainy"){
+	takeHaterAction(status: haterStatus)
+}
+
+/*
+	Input weather: "rainy" (selain sunny)
+	Output : Hating
+
+	Input weather: "sunny"
+	Output : (no output) // Karena takeHaterAction() hanya akan dijalankan apabila argument-
+						 // yang dilewatkan valid dan non-optional string
+*/
