@@ -20,3 +20,30 @@ let other = Person(clothes: "short skirts", shoes: "high heels")
 // Contoh membaca nilai property Struct
 print(taylor.clothes) // Output: T-Shirts
 print(other.shoes) // Output: high heels
+
+
+# Swift menggunakan teknik yang disebut "Copy on Write" yang berarti-
+# Swift hanya menduplikat data apabila kita mencoba mengubahnya.
+# Hasilnya akan kelihatan apabila dijalankan di Playground XCode. Pada panel kanan IDE, taylorCopy akan-
+# mencetak data taylor dan data setelah diubah ke flip-flop.
+contoh:
+
+struct Person{
+	var clothes: String
+	var shoes: String
+}
+
+let taylor = Person(clothes: "T-shirts", shoes: "sneakers")
+let other = Person(clothes: "short skirts", shoes: "high heels")
+
+var taylorCopy = taylor
+taylorCopy.shoes = "flip flops"
+
+print(taylor)
+print(taylorCopy)
+
+/*
+	Output : 
+			 Person(clothes: "T-shirts", shoes: "sneaker")
+			 Person(clothes: "T-shirts", shoes: "flip flops")
+*/
