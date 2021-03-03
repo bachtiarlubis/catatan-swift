@@ -1,0 +1,43 @@
+# Catatan #14
+
+# Enumerations
+# Enumerations merupakan suatu cara untuk mendefenisikan jenis nilai kita sendiri di Swift.
+# Format Pemnulisan / Deklarasi enum
+Contoh
+enum NamaEnum {
+	case value1, value2, ..., valueN
+}
+
+atau
+
+enum NamaEnum{
+	case value1
+	case value2
+	case valueN
+}
+
+# Format pemanggilan value Enum di dalam Fungsi dengan Tipe Parameter Enum itu sendiri
+Contoh
+
+....
+
+func namaFungsi(myEnum: NamaEnum) -> String?{
+	if myEnum == NamaEnum.value1{
+		return "This is value1"
+	}else{
+		return nil
+	}
+
+	atau
+
+	if myEnum == .value1{
+		return "This is value1"
+	}else{
+		return nil
+	}	
+}
+
+namaFungsi(myEnum: .value2) // .value2 bisa juga NamaEnum.value2
+/*
+	Output : nil
+*/
