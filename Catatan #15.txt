@@ -1,0 +1,38 @@
+# Catatan #15
+
+# Enum dengan nilai tambahan.
+# Enum dengan nilai tambahan (Additional values) memungkinkan enum memiliki parameter-
+# atau nilai tambahan.
+Contoh:
+enum WeatherType{
+	case sun
+	case clud
+	case rain
+	case wind(speed: Int)
+	case snow
+}
+
+func getHaterStatus(weather: WeatherType) -> String?{
+	switch weather{
+		case .sun:
+			return nil
+
+		// let speed merupakan constant untuk menampung nilai Argument saat pemanggilan!
+		// Sedangkan where untuk pengecekan apakah speed < 10
+		case .wind(let speed) where speed < 10:
+			return "slow enough, good"
+
+		case .cloud, .wind:
+			return "dislike"
+		case .rain, .snow:
+			return "hate"
+		default:
+			return "zzzzzzz"
+	}
+}
+
+print(getHaterStatus(weather: WeatherType.wind(speed: 5)) ?? "It's fucking nil!") 
+// Output : slow enough, good
+
+print(getHaterStatus(weather: WeatherType.wind(speed: 10)) ?? "It's fucking nil!") 
+// Output : dislike
