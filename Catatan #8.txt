@@ -1,0 +1,37 @@
+# Catatan #8
+
+# Inner Loops
+# Merupakan Loop didalam Loop (Nested Loop)
+Contoh
+var arrName = [
+    "Bachtiar",
+    "Muhammad",
+    "Lubis"
+]
+var arrHobby = [
+    "Game",
+    "Gym",
+    "Code",
+    "Jogging"
+]
+
+for i in 0 ..< arrHobby.count {
+	var str = ""
+
+	for	j in 0 ..< arrName.count {
+		str += "\(arrName[j]) "
+	}
+	
+	str += " loves to"
+	str += " \(arrHobby[i])"
+
+	print(str)
+
+	continue
+}
+/*
+	Output : Bachtiar Muhammad Lubis loves to Game
+			 Bachtiar Muhammad Lubis loves to Gym
+			 Bachtiar Muhammad Lubis loves to Code
+			 Bachtiar Muhammad Lubis loves to Jogging
+*/
