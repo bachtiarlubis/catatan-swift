@@ -1,0 +1,25 @@
+# Catatan #17
+
+# Method di dalam Structs
+Contoh:
+struct Person {
+	var clothes: String
+	var shoes: String
+
+	func describe(){
+		print("I like wearing \(clothes) with \(shoes)")
+	}
+}
+
+let taylor = Person(clothes: "T-shirts", shoes: "Sneakers")
+let me = Person(clothes: "Shirts", shoes: "Boots")
+
+print(taylor.describe())
+print(me.describe())
+
+/*
+	Output: I like wearing T-shirts with Sneakers
+			()
+			I like wearing Shirts with Boots
+			()
+*/
