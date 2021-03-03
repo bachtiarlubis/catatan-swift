@@ -1,0 +1,70 @@
+# Catatan #13
+
+# Optional Chaining dan Nil Coalescing Operator
+
+# Optional Chaining 
+# Merupakan suatu metode / cara untuk menjalankan spesifik method-
+# hanya apabila operand sebelumnya tidak nil
+#
+# Contoh berikut untuk memastikan method uppercased() digunakan apabila-
+# nilai kembalian method tidak nil (null di PHP)
+Contoh:
+func albumReleased(year: Int) -> String?{
+    switch year {
+    case 2006:
+        return "Taylor Swift"
+    case 2008:
+        return "Fearless"
+    case 2010:
+        return "Speak Now"
+    case 2012:
+        return "Red"
+    case 2014:
+        return "1989"
+    
+    default:
+        return nil
+    }
+}
+
+let album = albumReleased(year: 2006)?.uppercased()
+print("The album is \(album)")
+
+/*
+	Output: The album is Optional(TYLOR SWIFT)
+*/
+
+
+# Operator Nil Coalescing
+# Operator Nil Coalescing simpelnya merupakan suatu operator untuk me-
+# mastikan suatu hasil kembalian fungsi memiliki suatu nilai saat di-
+# assign ke variable.
+#
+# Operator Nil Coalescing sangat efektif untuk menghentikan suatu nilai-
+# kembalian Optional (Otomatis Unwrapped) karena kita menyediakan suatu-
+# nilai lain apabila nilai kembalian fungsi nil.
+Contoh:
+func albumReleased(year: Int) -> String?{
+    switch year {
+    case 2006:
+        return "Taylor Swift"
+    case 2008:
+        return "Fearless"
+    case 2010:
+        return "Speak Now"
+    case 2012:
+        return "Red"
+    case 2014:
+        return "1989"
+    
+    default:
+        return nil
+    }
+}
+
+let album = albumReleased(year: 2006)?.uppercased() ?? "Unknown"
+print("The album is \(album)")
+
+/*
+	Output: The album is TYLOR SWIFT // Note: tanpa kurung Optional
+*/
