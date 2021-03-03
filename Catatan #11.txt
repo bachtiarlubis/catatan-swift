@@ -1,0 +1,46 @@
+# Catatan #11
+
+# Fungsi in Swift
+# Fungsi dapat memiliki External Parameter.
+# External parameter dapat menggunakan Undersocre (_) untuk mengabaikan External Parameter-
+# saat pemanggilan method.
+# Contoh func funcName(_ str: String){ .... } ==> funcName("Bachtiar")
+#
+# External Parameter ==> Parameter yang disertakan dengan Argument saat pemanggilan fungsi.
+# Contoh: func funcName(extParam intParam: String){ ... } funcName(extParam: "Bachtiar")
+#
+# Internal Parameter ==> Parameter fungsi saat pendeklarasian fungsi tersebut.
+# Contoh: func funcName(intParan: String){ .... } funcName(intParam: "Bachtiar")
+#
+Contoh ke-1:
+func countLetterInString(myString str: String){
+	print("The string \(str) has \(str.count) letters.")
+}
+
+countLetterInString(myString: "Bachtiar Muhammad Lubis")
+/*
+	Output : The string Bachtiar Muhammad Lubis has 23 letters.
+*/
+
+Contoh ke-2
+func countLetterInString(_ str: String){
+	print("The string \(str) has \(str.count) letters.")
+}
+
+countLetterInString("Bachtiar Muhammad Lubis")
+/*
+	Output : The string Bachtiar Muhammad Lubis has 23 letters.
+*/
+
+
+# Fungsi dengan nilai kembalian (return)
+Contoh:
+func ganjilGenap(numb number: Int) -> String{
+    if(number % 2 == 0){
+        return "Genap"
+    }else{
+        return "Ganjil"
+    }
+}
+
+print(ganjilGenap(numb: 10)) // Output : Genap
