@@ -1,0 +1,22 @@
+# Catatan #16
+
+# Structs.
+# Struct meruoakan Tipe Data Kompleks yang berarti bahwa Struct dibuat dari Multiple Values.
+#
+# Ketika mendefinisikan Struct, Swift mambuatnya lebih mudah dibuat karena secara otomatis-
+# men-generate sesuatu yang disebut Memberwise Initializer.
+#
+# Memberwize Initializier maksudnya membuat Struct dengan melewatkan nilai awal untuk-
+# kedua property dari contoh Struct berikut:
+Contoh:
+struct Person{
+	var clothes: String
+	var shoes: String
+}
+
+let taylor = Person(clothes: "T-Shirts", shoes: "Sneakers")
+let other = Person(clothes: "short skirts", shoes: "high heels")
+
+// Contoh membaca nilai property Struct
+print(taylor.clothes) // Output: T-Shirts
+print(other.shoes) // Output: high heels
