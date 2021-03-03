@@ -1,0 +1,20 @@
+# Catatan #9
+
+# While Loop
+Contoh:
+var counter = 0
+
+while true {
+	print("Counter is now \(counter)") 
+	counter += 1
+
+	if counter == 556 {
+		break
+	}
+}
+/* 
+	Output : Counter is now 0
+			 ....
+			 ....
+			 Counter is now 555
+*/
