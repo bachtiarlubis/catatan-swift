@@ -1,3 +1,50 @@
 # Catatan #7
 
-# Loop in Swift
+# Loop in Swift.
+# For Loop dengan Operator Closed Range (...) atau Operator Half Open Range (..<).
+# 1 ... 10 ==> Akan loop dari 1 sampai 10 !
+# 1 ..< 10 ==> Akan loop dari 1 sampai 9 !
+# i sebagai penampung nilai dari Closed Range Operator.
+Contoh For Loop dengan Operator Closed Range:
+for i in 1 ... 10 {
+	print("\(i) x 10 is \(i * 10)")
+}
+
+
+# Untuk mengabaikan nilai Closed Range per loopnya menggunakan Underscore (_).
+# Tujuannya untuk mempercepat proses running code kita.
+# Meskipun pada dasarnya XCode akan otomatis menganggap i sebagai _ apabila i tidak-
+# digunakan sama sekali.
+Contoh:
+var str = "Fakers gonna"
+
+for _ in 1 ... 5 {
+	str += " fake"
+}
+print(str)
+
+
+# For untuk loop Array
+# Loop array berdasarkan jumlah values:
+Contoh:
+var arrName = [
+	"Bachtiar",
+	"Muhammad",
+	"Lubis"
+]
+for name in arrName {
+	print("Each part of My Name is \(name)")
+}
+
+# Loop array berdasarkan nomor index
+# Untuk penggunaan loop dinamis dapat menggunakan count Contoh arrayVariable.count
+Contoh:
+var arrHobby = [
+	"Game",
+	"Gym",
+	"Code",
+	"Jogging"
+]
+for i in 0 ..< arrName.count {
+	print("\(arrName[i]) loves to \(arrHobby[i])")
+}
