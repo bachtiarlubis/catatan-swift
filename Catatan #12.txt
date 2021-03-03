@@ -1,8 +1,9 @@
 # Catatan #12
 
 # Optionals
-# Optionals memungkinakan nilai kembalian suatu fungsi tidak harus-
-# memiliki tipe yang sama dengan tipe kemalian fungsi.
+# Optionals memungkinakan nilai kembalian bisa menjadi null.
+# Dan untuk menggunakan nilai kembalian Optionals kita harus membukanya (Unwrap) agar-
+# tidak menjadi Optional(nilaiKembalian) yang mana belum bisa digunakan.
 #
 # Fungsi dengan Tipe Optional dilambangkan dengan tanda ?
 # 
@@ -49,8 +50,13 @@ func getHaterStatus(weather: String) -> String?{
 var status = getHaterStatus(weather: "rainy") // Output: Hate
 
 
-# Menyertakan Argument dari hasil Fungsi Type Optional ke dalam fungsi dengan Type Absolute (Int, String, Bool, dll)
-# Ini bertujuan untuk memberikan Argument yang valid kepada Fungsi dengan Type Absolute.
+# Menyertakan Argument dari hasil Fungsi Type Optional ke dalam fungsi dengan menerima- 
+# Argument Type Absolute (Int, String, Bool, dll).
+# Ini bertujuan untuk memberikan Argument yang valid kepada Fungsi yang menerima Argument-
+# bertipe Absolute.
+#
+# if let (Unwrapping) bertujuan untuk cek apabila Optional memiliki nilai maka nilainya akan digunakan-
+# sebaliknya apabila nil maka tidak akan digunakan sama sekali.
 
 Contoh:
 // Fungsi Type Optional
@@ -80,4 +86,56 @@ if let haterStatus = getHaterStatus(weather: "rainy"){
 	Input weather: "sunny"
 	Output : (no output) // Karena takeHaterAction() hanya akan dijalankan apabila argument-
 						 // yang dilewatkan valid dan non-optional string
+*/
+
+
+
+# Untuk menyertakan Hasil Fungsi Type Optional ke dalam Fungsi dengan parameter Type-
+# Optional sama seperti biasa
+Contoh:
+func getHaterStatus(weather: String) -> String?{
+    if weather == "sunny"{
+        return nil
+    }else{
+        return "Hate"
+    }
+}
+
+func takeHaterAction(status: String?) -> String {
+    if status == "Hate" {
+        return "Hating"
+    }
+    return "string kosong"
+}
+
+var status = getHaterStatus(weather: "sunny")
+
+var haterAct: String = takeHaterAction(status: status)
+print(haterAct) // Output : string kosong
+
+
+# Memaksa untuk unwrapping Type Optional
+# Unwrapping secara paksa dapat dilakukan dengan menggunakan tanda Seru (!)
+Contoh:
+func yearAlbumReleased(name: String) -> Int? {
+    if name == "Taylor Swift"{  return 2006 }
+    if name == "Fearless"{  return 2006 }
+    if name == "Speak Now"{  return 2006 }
+    if name == "Red"{  return 2006 }
+    if name == "1989"{  return 2006 }
+    
+    return nil
+}
+
+var year = yearAlbumReleased(name: "Red")
+
+if year == nil{
+    print("There is something wrong!")
+}else{
+    print("It was released in \(year!)")
+}
+/*
+	Output dengan Tanda ! : It was released in 2006
+
+	Output tanda Tanda !  : It was released in Optional(2006)
 */
