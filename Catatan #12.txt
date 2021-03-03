@@ -116,6 +116,8 @@ print(haterAct) // Output : string kosong
 
 # Memaksa untuk unwrapping Type Optional
 # Unwrapping secara paksa dapat dilakukan dengan menggunakan tanda Seru (!)
+# Gunakan ini apabila kita tau bahwa fungsi / variable tersebut tidak-
+# nil (null di PHP)
 Contoh:
 func yearAlbumReleased(name: String) -> Int? {
     if name == "Taylor Swift"{  return 2006 }
