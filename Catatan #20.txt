@@ -1,0 +1,35 @@
+# Catatan #20
+
+# Property & Property Observers
+# Property 			 ==> variable didalam class / structs.
+# Property Observers ==> Property khusus yang akan dijalankan setelah atau sebelum suatu-
+# 	 	 				 Property dirubah.
+# Property Observers di Swift
+# 1. newValue ==> Untuk mengambil nilai yang baru di Assign ke suatu Property.
+# 2. oldValue ==> Untuk mengambil nilai lama suatu Property yang di inisialisasi di awal.
+#
+Contoh:
+struct Person {
+    var clothes: String {
+        willSet {
+            updateUI(msg: "I'm changing from \(clothes) to \(newValue)")
+        }
+        
+        didSet {
+            updateUI(msg: "I just changed from \(oldValue) to \(clothes)")
+        }
+    }
+}
+
+func updateUI(msg: String){
+    print(msg)
+}
+
+var taylor = Person(clothes: "T-Shirts") // Akan menjadi oldValue
+taylor.clothes = "Short Skirts" // Akan menjadi newValue
+
+/*
+	Output : 
+		I'm changing from T-Shirts to Short Skirts
+		I just changed from T-Shirts to Short Skirts
+*/
