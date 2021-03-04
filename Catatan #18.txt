@@ -1,0 +1,48 @@
+# Catatan #18
+
+# Class.
+# Beberapa perbedaan penting antara Class dan Structs:
+1. Class tidak menerima Memberwise Initializer secara otomatis. Harus-
+	dibuat sendiri (Parameter Constructor).
+2. Class dapat didefenisikan berdasarkan pada Class lain.
+3. Instansiasi suatu Class disebut Objek. Apabila Objek di duplikat,
+	kedua Objek tersebut mengarah pada data yang sama secara default-
+	mengubah salah satunya akan mengubah copy-an lain juga.
+
+
+# Karena Class tidak memiliki Memberwize Initializer secara otomatis,
+# maka kita harus buat Constructor atau Initializer sendiri.
+Contoh:
+class Naruto {
+	var clan: String
+	var specialSkill: String
+
+	init(clan: String, shoes: String){
+		self.clan = clan
+		self.shoes = shoes
+	}
+}
+var naruto = Naruto(clan: "Uzumaki", specialSkill: "Rasengan")
+
+
+# Objek yang diduplikat A->B, apabila terjadi perubahan pada Objek B-
+# maka Objek A juga ikut berubah, begitu juga sebaliknya.
+Contoh:
+....
+
+var naruto = Naruto(clan: "Uzumaki", specialSkill: "Rasengan")
+var naruto2 = Naruto(clan: "Namikaze", specialSkill: "Senjutsu")
+var naruto3 = naruto
+naruto3.clan = "Uchiha"
+
+
+print("His name is \(naruto.clan) Naruto and his Special Jutsu is \(naruto.specialSkill)")
+print("His name is \(naruto2.clan) Naruto and his Special Jutsu is \(naruto2.specialSkill)")
+
+/*
+	Output:
+		His name is Uchiha Naruto and his Special Jutsu is Oiroke (jadi berubah)
+		His name is Namikaze Naruto and his Special Jutsu is Senjutsu
+		His name is Uchiha Naruto and his Special Jutsu is Oiroke
+
+*/
