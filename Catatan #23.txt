@@ -1,0 +1,25 @@
+# Catatan #23
+
+# Access Controll (Tipe Data di Class)
+# Macam-macam tipe data
+# 1. Public 	  ==> Semua dapat Read dan Write Propertynya.
+# 2. Internal     ==> Hanya dapat Read dan Write dari Swift Code kita.
+# 3. File Private ==> Hanya dapat Read dan Write dari Swift Code kita-
+#					  dan dalam file yang sama.
+# 4. Private      ==> Property hanya tersedia didalam method milik-
+#					  tipe atau ekstensi-nya.
+#
+# Note : Pada umumnya kita tidak perlu menentukan Access Controll,
+#		 tetapi kadang kita ingin agar suatu property tidak bisa-
+#		 diakses oleh orang lain secara langsung.
+Contoh pendeklarasian Property tipe private
+class Naruto {
+	private var name: String?
+	....
+}
+
+Contoh pendeklarasian Property Access Control File Private
+class Naruto {
+	fileprivate var name: String?
+	....
+}
