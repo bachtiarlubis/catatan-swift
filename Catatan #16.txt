@@ -8,8 +8,7 @@
 #
 # Memberwize Initializier merupakan cara singkat untuk menginisiali-
 # sasi Property dari instance Structs baru. Nilai awal untuk proper-
-# ty dari instance baru dapat diberikan pada Memberwise Initializer
-# dengan nama.
+# ty dari instance baru dapat diberikan pada Memberwise Initializer.
 # Initinya Memberwize Initializer adalah Argument pada Struct.
 Contoh:
 struct Person{
