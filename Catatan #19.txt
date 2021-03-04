@@ -1,0 +1,93 @@
+# Catatan #19
+
+# Inheritance
+# Inheritance Swift sama dengan Inheritance pada umumnya, Inheritance bertingkat dapat-
+# dilakukan di Swift. Misal Class C extends ke B dan B extends ke A.
+#
+# Extends disimbolkan dengan tanda colon (:)
+#
+# Di swift juga mendukung override method, sama seperti pemrograman pada ummnya untuk-
+# menggunakan method dengan nama yang sama pada Parent Class
+#
+# Remainder. Perbedaan Structs dan Classes
+# 1. Class lebih Flexible  sedangkan Structs lebih Safety ==> Karena datanya tidak- 
+#	 diduplikat sepenuhnya, oleh karena itu mengubah class B yang mana hasil copy-
+#	 dari class A dapat mengubah class A. Sedangkan Structs tidak akan berubah.
+# 2. Class disebut Reference Types sedangkan Structs disebut Value Types => Maksudnya-
+#	 Reference Types karena objek hanya referensi bersama. Sedangkan Value Type karena-
+#	 Structs hanya menunjuk pada value-nya.
+# 
+# Jadi sebagai aturan dasar, gunakan selalu Structs dan hanya gunakan Class ketika memiliki-
+# alasan khusus untuk menggunakannya.
+#
+# Format Override di Swift
+1. Override method biasa di Child Class dari Parent Class
+Contoh:
+....
+	override func methodName(){
+		print("abcdefg")
+	}
+....
+
+2. Override constructor / initializer di Child Class dari Parent Class
+Contoh:
+....
+	init(forParentInit1: String, forParentInit2: Int, forChildInit1: String){
+		self.forChildInit1 = forChildInit1
+		super.init(forParentInit1: forParentInit1, forParentInit2: forParentInit2)
+	}
+....
+
+
+
+Contoh Inheritance di Swift:
+
+// Parent Class
+class Singer {
+    var name: String
+    var age: Int
+    
+    init(n: String, a: Int) {
+        self.name = n
+        self.age = a
+    }
+    
+    func sing() {
+        print("Ahh uhh ahh hikhikhiiikkk")
+    }
+}
+
+//Child Class
+class CountrySinger: Singer {
+	// Overriding method sing dari Parent Class
+    override func sing(){
+        print("Trucks, guitars and liquor")
+    }
+}
+
+class HeavyMetalSinger: Singer {
+    var noiseLevel: Int
+    
+    // Cara Overriding Constructor / Initializer dari Parent Class
+    init(name: String, age: Int, noiseLevel: Int) {
+        self.noiseLevel = noiseLevel
+        super.init(n: name, a: age)
+    }
+    
+    override func sing() {
+        print("Ci cit cuiit cuuiit cit cuiit cuiit...")
+    }
+}
+
+var mulanJamila = Singer(n: "Mulan Jameela", a: 40)
+var maiaEstianti = CountrySinger(n: "Maia Estianti", a: 50)
+var metallica = HeavyMetalSinger(name: "Metallica Vocalist", age: 50, noiseLevel: 100)
+
+print("Her name is \(mulanJamila.name) and she is \(mulanJamila.age) years old.")
+mulanJamila.sing()
+
+print("Her name is \(maiaEstianti.name) and she is \(maiaEstianti.age) years old.")
+maiaEstianti.sing()
+
+print("Her name is \(metallica.name) and she is \(metallica.age) years old.")
+metallica.sing()
