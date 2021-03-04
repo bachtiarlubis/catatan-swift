@@ -1,0 +1,25 @@
+# Catatan #26
+
+# Closure
+# Closure di dalama Swift
+Contoh:
+
+let vw = UIView()
+
+UIView.animate(withDuration: 0.5, animation: {
+	vw.alpha = 0
+})
+
+# Note: Pada contoh diatas kita bisa lihat, bahwa Closure dapat- 
+# mendeteksi Constant vw yang berada diliharnya
+
+
+Contoh Trailing Closure:
+# Note: Trailing Closure adalah apabila parameter terakhir dari-
+# method adalah closure (lihat contoh diatas), kita dapat-
+# memindahkannya di dalam block / di dalam kurung.
+let vw = UIView()
+
+UIView.animate(withDuration: 0.5){
+	vw.alpha = 0
+}
