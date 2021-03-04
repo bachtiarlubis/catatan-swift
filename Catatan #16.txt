@@ -24,8 +24,6 @@ print(other.shoes) // Output: high heels
 
 # Swift menggunakan teknik yang disebut "Copy on Write" yang berarti-
 # Swift hanya menduplikat data apabila kita mencoba mengubahnya.
-# Hasilnya akan kelihatan apabila dijalankan di Playground XCode. Pada panel kanan IDE, taylorCopy akan-
-# mencetak data taylor dan data setelah diubah ke flip-flop.
 contoh:
 
 struct Person{
