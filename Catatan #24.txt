@@ -1,0 +1,101 @@
+# Catatan #24
+
+# Polymorphism
+# Polymorphism merupakan child class B merupakan turunan dari parent class A sehingga kedua-
+# class dapat diperlakukan sebagaimana baik A ataupun B.
+
+
+# Konversi Tipe dengan Typecasting
+# Typecasting bertujuan untuk memastikan (downcasting) suatu data memiliki tipe data -
+# yang diharapkan.
+# 
+# Typecasting memiliki 3 bentuk, tetapi yang paling sering digunakan hanya 2:
+# 1. as? (Optional Downcasting) => Mungkkin benar mungkin tidak (fail)
+# 2. as! (Forced Downcasting) => Pastinya benar, kalau tidak biarkan aplikasi Crash / 
+#    Error.
+
+Contoh:
+import UIKit
+
+class Album {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func getPerformace() -> String {
+        return "The Album \(name) are sold lots"
+    }
+}
+
+class StudioAlbum: Album {
+    var studio: String
+    
+    init(name: String, studio: String) {
+        self.studio = studio
+        super.init(name: name)
+    }
+    
+    override func getPerformace() -> String {
+        return "The Studio ALbum \(name) are sold Lots"
+    }
+}
+
+class LiveAlbum: Album {
+    var location: String
+    
+    init(name: String, location: String) {
+        self.location = location
+        super.init(name: name)
+    }
+    
+    override func getPerformace() -> String {
+        return "The Live Album \(name) are sold lots"
+    }
+}
+
+var taylorSwift = StudioAlbum(name: "Taylor Swift", studio: "The Castles Studios")
+var fearless = StudioAlbum(name: "Speak Now", studio: "Aimeeland Studio")
+var iTunesLive = LiveAlbum(name: "iTunes Live from SoHo", location: "New York")
+
+// Array dengan tipe objek Album
+var allAlbums: [Album] = [
+    taylorSwift,
+    fearless,
+    iTunesLive
+]
+
+
+// Contoh dengan as?
+for album in allAlbums {
+    
+
+    // Untuk dapat melakukan pemanggilan property Studio dan Location dengan aman-
+    // Typecasting dibutuhkan. Contoh sebagai berikut: 
+
+    if let studioAlbum = album as? StudioAlbum {
+
+    	// Apabila taylorSwift atau fearless Objek maka ini dijalankan
+        print(studioAlbum.studio)
+
+    }else if let liveAlbum = album as? LiveAlbum {
+
+    	// Apabila taylorSwift atau fearless Objek maka ini dijalankan
+        print(liveAlbum.location)
+
+    }
+    
+}
+
+
+// Contoh dengan as!
+// Akan terjadi error saat perulangan mengenai iTunesLive
+//
+// Error: Execution was interrupted, reason: signal SIGABRT.
+//	The process has been left at the point where it was interrupted, use "thread
+//	return -x" to return to the state before expression evaluation.
+for album in allAlbums {
+    let studioAlbum = album as! StudioAlbum
+    print(studioAlbum.studio)
+}
