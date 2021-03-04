@@ -1,0 +1,16 @@
+# Catatan #21
+
+# Computed properties (Property Terkomputasi)
+# Untuk melakukan komputasi di dalam Property. Caranya cukup menambahkan {} pada-
+# initialisasi Property.
+Contoh:
+struct Person {
+	var age: Int
+
+	var ageInDogYears: Int {
+		return age * 7
+	}
+}
+
+var fan = Person(age: 25)
+print(fan.ageInDogYears) // Output : 175
