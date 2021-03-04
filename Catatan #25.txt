@@ -1,0 +1,26 @@
+# Catatan #25
+
+# Konversi tipe umum (Int, String, Double dll) dengan initializers.
+# Konversi data umum  seperti Int ke String dengan method String()
+Contoh:
+let number = 5
+let text = String(number)
+print(text) // Output : "5"
+type(of: text) // Output : String-Type
+
+
+# Contoh yang SALAH menggunakan as! (Forced Downcasting)
+# Dan menyebabkan Error
+# Error: Execution was interrupted, reason: EXC_BAD_INSTRUCTION- 
+# (code=EXC_I386_INVOP, subcode=0x0).
+# The process has been left at the point where it was interrupted,- 
+# use "thread return -x" to return to the state before expression-
+# evaluation.
+
+let number = 5
+let text = number as! String 
+print(text)
+
+# Note: Error ini terjadi karena kita memberikan Kepastian bahwa-
+# data number adalah String yang mana bertolak belakang.
+# lihat Catatan #24.
