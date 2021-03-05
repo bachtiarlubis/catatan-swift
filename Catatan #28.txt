@@ -1,0 +1,57 @@
+# Catatan #28
+
+# Extension
+# Extension memungkinkan kita untuk memodifikasi Tipe Data untuk menambahkan fungsional-
+# itas baru.
+#
+# Menggunakan keyword "self" untuk mengakses data yang dikenakan extension.
+#
+# Good Practice untuk memindahkan Extension ke file terpisah.
+Contoh
+
+var myInt = 0
+
+extension Int {
+	func plusOne() -> Int{
+		return self + 1
+	}
+}
+
+print(myInt.plusOne()) 	// Output : 1
+print(myInt) 			// Output : 0
+print(10.plusOne()) 	// Output : 11
+
+# Note: Kita ketahui, bahwa:
+#		1. Extension tidak akan merubah nilai variable myInt. Oleh karena itu bisa juga-
+#		   diterapkan pada konstanta (let).
+#		2. Extension dapat diterapkan langsung tanpa perantara variable.
+#		
+#		Namun sebenarnya kita dapat merubah nilai variable myInt dengan menggunakan-
+#		mutating. Dengan mutating kita tidak dapat menerapkannya pada konstanta (let).
+Contoh:
+var myInt = 0
+
+extension Int {
+	mutating func plusOne(){
+		self += 1
+	}
+}
+
+print(myInt) 			// Output : 0
+print(myInt.plusOne()) 	// Output : ()
+print(myInt) 			// Output : 1
+print(10.plusOne()) 	// Akan Error
+
+
+# Disamping itu Extension juga dapat mempersingkat code kita
+Contoh:
+// Extension untuk hapus spasi di depan, belakang dan baris baru kosong
+extension String{
+	mutating func trim(){
+		self = trimmingCharacters(in: .whitespacesAndNewLines)
+	}	
+}
+
+var str = "		Bachtiar Muhammad Lubis "
+str = str.trim()
+print(str) // Output : Bachtiar Muhammad Lubis
