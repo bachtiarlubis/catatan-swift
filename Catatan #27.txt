@@ -1,8 +1,8 @@
 # Catatan #27
 
 # Protocol merupakan pendefenisian suatu kumpulan method dan property dimana suatu -
-# Class atau Struct harus mengimplementasikannya (conform) apabila diturunkan dari-
-# Protocol tersebut (Abstract Class di PHP).
+# Class atau Struct harus mengimplementasikannya / Menyesuaikan (conform) apabila -
+# diturunkan dari Protocol tersebut (Abstract Class di PHP).
 Contoh:
 // sepert
 protocol Hokage {
