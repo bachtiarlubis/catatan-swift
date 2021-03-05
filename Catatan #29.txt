@@ -1,0 +1,100 @@
+# Catatan #29
+
+# Protocol Extensions
+# Protocol Extensions memungkin kita untuk menggunakan Extensions tidak hanya pada -
+# spesifik Tipe Data saja tetapi dengan semua tipe data yang sejenis. (Lihat Conoth 1, 2)
+#
+# Protocol Extensions juga membantu untuk menyediakan Default implementasi method,
+# sehingga Struct atau Class yang Conform ke Protocol tidak perlu mengimplementasikan-
+# method / property Protocol itu lagi. (Lihat Contoh: 3)
+#
+# Glosarium: 
+# 1. self (s) ==> Nilai sekarang.
+# 2. Self (S) ==> Tipe Data sekarang.
+#
+Contoh ke-1  Semua tipe Collection bisa gunakan:
+let konoha = [
+    "Naruto", "Kakashi", "Orochimaru", "Hashirama"
+]
+
+let suna = Set([
+    "Gaara", "Temari", "Kankuro"
+])
+
+extension Collection {
+    func summerize() {
+        print("There are \(count) of us:")
+        
+        for name in self{
+            print(name)
+        }
+    }
+}
+
+konoha.summerize()
+print()
+suna.summerize()
+
+/*
+	Output:
+		There are 4 of us:
+		Naruto
+		Kakashi
+		Orochimaru
+		Hashirama
+
+		There are 3 of us:
+		Kankuro
+		Gaara
+		Temari
+*/
+
+Contoh Ke-2 Semua tipe Integer bisa gunakan:
+
+extension BinaryInteger {
+    func clamp(low: Self, high: Self) -> Self {
+        if (self > high) {
+            return high
+        } else if (self < low) {
+            return low
+        }
+
+        return self
+    }
+}
+
+print(0.clamp(low: 1, high: 10)) // Output: 1
+print(15.clamp(low: 1, high: 10)) // Output: 10
+
+
+Contoh Ke-3 Method Protocol tidak perlu diimplementasikan lagi di Struct:
+
+protocol Employee {
+    var name: String {  get set }
+    var jobTitle: String {  get set }
+    func doWork()
+}
+
+extension Employee {
+    func doWork() {
+        print("I'm Bussy")
+    }
+}
+
+struct Staff: Employee {
+    var name = "Bachtiar"
+    var jobTitle = "Programmer"
+}
+
+var bachtiar = Staff()
+print(bachtiar.name)
+print(bachtiar.jobTitle)
+bachtiar.doWork()
+
+/*
+	Output : 
+		Bachtiar
+		Programmer
+		I'm Bussy
+
+*/
