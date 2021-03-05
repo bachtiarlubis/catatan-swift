@@ -1,0 +1,43 @@
+# Catatan #27
+
+# Protocol merupakan pendefenisian suatu kumpulan method dan property dimana suatu -
+# Class atau Struct harus mengimplementasikannya (conform) apabila diturunkan dari-
+# Protocol tersebut (Abstract Class di PHP).
+Contoh:
+// sepert
+protocol Hokage {
+    var skill: String { get set }
+    var intelligent: Int {  get set }
+    
+    func doWork()
+}
+
+struct Hashirama: Hokage {
+    var skill = "Mokuton"
+    var intelligent = 99
+    
+    func doWork() {
+        print("With my \(skill) skill and my \(intelligent) IQ, i would protect my people!")
+    }
+}
+
+struct Naruto: Hokage {
+    var skill = "Rasengan"
+    var intelligent = 97
+    
+    func doWork() {
+        print("With my \(skill) skill and my \(intelligent) IQ, i would protect my people!")
+    }
+}
+
+let hokage: [Hokage] = [Hashirama(), Naruto()]
+
+for person in hokage {
+    person.doWork()
+}
+
+/*
+	Output:
+		With my Mokuton skill and my 99 IQ, i would protect my people!
+		With my Rasengan skill and my 97 IQ, i would protect my people!
+*/
